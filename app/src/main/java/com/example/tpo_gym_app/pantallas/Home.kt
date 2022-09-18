@@ -36,6 +36,8 @@ class Home : AppCompatActivity() {
         super.onStart()
 
         scope.launch{
+
+            // TODO: Revisar todos los objtos. sos un vago julian.
             ejercicios = RepositorioMain.fetchData(this@Home)
 
             withContext(Dispatchers.Main){
