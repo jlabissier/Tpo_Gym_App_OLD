@@ -16,18 +16,18 @@ data class Exercise (
     val creationDate: String? = null,
 
     val category: Long? = null,
-    val muscles: List<Any>? = null,
+    val muscles: ArrayList<Any>? = null,
 
     @SerializedName("muscles_secondary")
-    val musclesSecondary: List<Any>? = null,
+    val musclesSecondary: ArrayList<Any>? = null,
 
 
-    val equipment: List<Long>? = null,
+    val equipment: ArrayList<Any>? = null,
     val language: Long? = null,
     val license: Long? = null,
 
     @SerializedName("license_author")
     val licenseAuthor: String? = null,
 
-    val variations: List<Any>? = null
+    val variations: ArrayList<Any>? = null
 )
