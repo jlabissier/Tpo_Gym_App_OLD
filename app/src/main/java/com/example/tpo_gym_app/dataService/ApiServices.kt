@@ -2,29 +2,29 @@ package com.example.tpo_gym_app.dataService
 
 import android.content.Context
 import android.util.Log
-import com.example.tpo_gym_app.objetos.EjerciciosResponse
 import com.example.tpo_gym_app.objetos.Exercise
-import com.example.tpo_gym_app.objetos.ExerciseBaseInfo
+import com.example.tpo_gym_app.objetos.Personaje
+import com.example.tpo_gym_app.objetos.ResponseDisney
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.create
 
 class ApiServices {
     companion object{
-        val BASE_URL = "https://wger.de/"
-        suspend fun fetchdata(context: Context): ArrayList<Exercise> {
+        val BASE_URL = "https://api.disneyapi.dev/"
+        suspend fun fetchdata(context: Context): ResponseDisney {
 
             val retrofit = Retrofit.Builder().baseUrl(BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
             val apiEndpoint = retrofit.create(ExercisesApi::class.java)
-            var result = apiEndpoint.getExersices().execute()
+            var result = apiEndpoint.getPersonajes().execute()
 
             return if(result.isSuccessful){
-                result.body()?.result!!
+                result.body()!!
             }else{
                 Log.e("debug","Error al obtener los Ejercicios")
-                return ArrayList()
+                val reponse = ResponseDisney(ArrayList<Personaje>())
+                return reponse
             }
 
         }
