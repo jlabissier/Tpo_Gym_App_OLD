@@ -7,7 +7,6 @@ import android.util.Log
 import android.widget.Button
 import com.example.tpo_gym_app.R
 import com.example.tpo_gym_app.dataService.RepositorioMain
-import com.example.tpo_gym_app.objetos.Exercise
 import com.example.tpo_gym_app.objetos.Personaje
 import com.example.tpo_gym_app.objetos.ResponseDisney
 import kotlinx.coroutines.*
@@ -58,7 +57,7 @@ class Home : AppCompatActivity() {
     fun cambioPantallaEjercicios(){
         // Cambiar a la pantalla de listado de ejercicios.
         // strar.listadoEjercicios("Ejercicios")
-        var intent = Intent(this, ListadoEjercicios::class.java)
+        var intent = Intent(this, Listado::class.java)
         intent.putExtra("Titulo","Ejercicios")
         startActivity(intent)
         finish()
@@ -67,7 +66,7 @@ class Home : AppCompatActivity() {
     fun cambioPantallaEjerciciosFavoritos(){
         // Cambiar a la pantalla de listado de ejercicios.
         // strar.listadoEjercicios("Favoritos", listaDeEjercicios.)
-        var intent = Intent(this, ListadoEjercicios::class.java)
+        var intent = Intent(this, Listado::class.java)
         intent.putExtra("Titulo","Favoritos")
         startActivity(intent)
         finish()

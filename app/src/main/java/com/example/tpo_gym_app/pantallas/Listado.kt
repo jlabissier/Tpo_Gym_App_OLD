@@ -7,7 +7,7 @@ import android.widget.Button
 import android.widget.TextView
 import com.example.tpo_gym_app.R
 
-class ListadoEjercicios : AppCompatActivity() {
+class Listado : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_listado_ejercicios)

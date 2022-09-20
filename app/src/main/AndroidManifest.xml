@@ -17,7 +17,7 @@
         android:theme="@style/Theme.Tpo_Gym_App"
         tools:targetApi="31">
         <activity
-            android:name=".pantallas.ListadoEjercicios"
+            android:name=".pantallas.Listado"
             android:exported="false" />
         <activity
             android:name=".pantallas.PantallaDeCarga"
