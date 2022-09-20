@@ -23,7 +23,7 @@ class ApiServices {
                 result.body()!!
             }else{
                 Log.e("debug","Error al obtener los Ejercicios")
-                val reponse = ResponseDisney(ArrayList<Personaje>())
+                val reponse = ResponseDisney(ArrayList<Personaje>(),0,0,"","")
                 return reponse
             }
 
