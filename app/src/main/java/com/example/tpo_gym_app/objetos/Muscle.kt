@@ -3,7 +3,7 @@ import com.google.gson.annotations.SerializedName
 
 
 data class Muscle (
-    val id: Long? = null,
+    val id: Int? = null,
     val name: String? = null,
 
     @SerializedName("name_en")
