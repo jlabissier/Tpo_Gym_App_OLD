@@ -43,6 +43,9 @@ class Home : AppCompatActivity() {
 
     }
 
+
+
+
     fun cargarDatos(){
         // Ejercicios
         scope.launch{
@@ -50,6 +53,7 @@ class Home : AppCompatActivity() {
             ejercicios = RepositorioMain.fetchEjercicios(this@Home)!!
             categorias = RepositorioMain.fetchCategorias(this@Home)!!
             musculos = RepositorioMain.fetchMusculos(this@Home)!!
+            //var ejererciciosfavoritos = Repos.fetchFavoritos()
 
             withContext(Dispatchers.Main){
                 //Log.d("debug","cant Personajes: " + personajes!!.data.size)
@@ -81,9 +85,13 @@ class Home : AppCompatActivity() {
         // Cambiar a la pantalla de listado de ejercicios.
         var intent = Intent(this, Listado::class.java)
         intent.putExtra("Titulo","Favoritos")
+
+        // todo: Lista ejercicios trae de firebase.
         intent.putExtra("Ejercicios",ejercicios)
+
         intent.putExtra("Musculos",musculos)
         intent.putExtra("Categorias",categorias)
+
         startActivity(intent)
         finish()
     }

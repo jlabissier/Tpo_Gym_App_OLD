@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
 import com.example.tpo_gym_app.R
+import okio.Options
 
 class Listado : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,6 +33,12 @@ class Listado : AppCompatActivity() {
         var intent = Intent(this, Home::class.java)
         startActivity(intent)
         finish()
+    }
+
+    fun filtroPorCat(){
+        //var categoria = findViewById<Options>(R.id.filtroCategora);
+        //var ejerciciosFiltrados = ejercicios.map(e.c = c)
+
     }
 
 }

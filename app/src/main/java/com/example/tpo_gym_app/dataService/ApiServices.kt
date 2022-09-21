@@ -10,7 +10,6 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class ApiServices {
     companion object{
-        //val BASE_URL = "https://api.disneyapi.dev/"
         val BASE_URL = "https://wger.de/"
 
         suspend fun fetchEjercicios(context: Context): ArrayList<Exercise>? {
@@ -44,6 +43,7 @@ class ApiServices {
                 return ArrayList<Category>()
             }
         }
+
         suspend fun fetchMusculos(context: Context): ArrayList<Muscle>? {
             val retrofit = Retrofit.Builder().baseUrl(BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
