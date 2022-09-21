@@ -7,16 +7,14 @@ import android.util.Log
 import android.widget.Button
 import com.example.tpo_gym_app.R
 import com.example.tpo_gym_app.dataService.RepositorioMain
-import com.example.tpo_gym_app.objetos.Personaje
-import com.example.tpo_gym_app.objetos.ResponseDisney
+import com.example.tpo_gym_app.objetos.Exercise
 import kotlinx.coroutines.*
 import kotlin.coroutines.CoroutineContext
 
 class Home : AppCompatActivity() {
     private val coroutineContext: CoroutineContext = newSingleThreadContext("Main")
     private val scope = CoroutineScope(coroutineContext)
-    private var ejercicios = ArrayList<Personaje>()
-    private var personajes: ResponseDisney? = null
+    private var ejercicios = ArrayList<Exercise>()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -40,11 +38,12 @@ class Home : AppCompatActivity() {
 
         scope.launch{
             // TODO: Revisar todos los objtos. sos un vago julian.
-            // ejercicios = RepositorioMain.fetchData(this@Home)
-            personajes = RepositorioMain.fetchData(this@Home)
+            ejercicios = RepositorioMain.fetchData(this@Home)!!
 
             withContext(Dispatchers.Main){
-                Log.d("debug","cant Personajes: " + personajes!!.data.size)
+                //Log.d("debug","cant Personajes: " + personajes!!.data.size)
+                Log.d("debug","Cant Ejercicios: " + (ejercicios!!.size ))
+
             }
         }
 

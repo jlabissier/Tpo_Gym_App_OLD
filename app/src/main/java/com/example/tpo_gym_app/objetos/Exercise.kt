@@ -3,31 +3,31 @@ package com.example.tpo_gym_app.objetos
 import com.google.gson.annotations.SerializedName
 
 data class Exercise (
-    val id: Long? = null,
+    val id: Int? = null,
     val uuid: String? = null,
     val name: String? = null,
 
     @SerializedName("exercise_base")
-    val exerciseBase: Long? = null,
+    val exerciseBase: Int? = null,
 
     val description: String? = null,
 
     @SerializedName("creation_date")
     val creationDate: String? = null,
 
-    val category: Long? = null,
-    val muscles: ArrayList<Any>? = null,
+    val category: Int? = null,
+    val muscles: ArrayList<Int>? = null,
 
     @SerializedName("muscles_secondary")
-    val musclesSecondary: ArrayList<Any>? = null,
+    val musclesSecondary: ArrayList<Int>? = null,
 
 
-    val equipment: ArrayList<Any>? = null,
-    val language: Long? = null,
-    val license: Long? = null,
+    val equipment: ArrayList<Int>? = null,
+    val language: Int? = null,
+    val license: Int? = null,
 
     @SerializedName("license_author")
-    val licenseAuthor: String? = null,
+    val license_author: String? = null,
 
-    val variations: ArrayList<Any>? = null
+    val variations: ArrayList<Int>? = null
 )
