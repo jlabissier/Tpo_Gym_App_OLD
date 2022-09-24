@@ -39,11 +39,9 @@ class Home : AppCompatActivity() {
     override fun onStart() {
         super.onStart()
 
-        cargarDatos()
+        //cargarDatos()
 
     }
-
-
 
 
     fun cargarDatos(){
@@ -73,7 +71,7 @@ class Home : AppCompatActivity() {
         // strar.listadoEjercicios("Ejercicios")
         var intent = Intent(this, Listado::class.java)
         intent.putExtra("Titulo","Ejercicios")
-        intent.putExtra("Ejercicios",ejercicios)
+        intent.putExtra("Ejercicios", ejercicios )
         intent.putExtra("Musculos",musculos)
         intent.putExtra("Categorias",categorias)
 

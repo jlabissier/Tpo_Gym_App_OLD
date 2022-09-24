@@ -10,9 +10,9 @@ import com.example.tpo_gym_app.R
 
 class ItemEjercicio (itemView: View) : RecyclerView.ViewHolder(itemView) {
     val name : TextView = itemView.findViewById(R.id.lblName)
-    val muscle : TextView = itemView.findViewById(R.id.lblMuscle)
+    val cat : TextView = itemView.findViewById(R.id.lblMuscle)
     var fav : Switch = itemView.findViewById(R.id.switch_Favoritos)
-    
+    var separator : View = itemView.findViewById(R.id.vh_separator)
 }
 
 
