@@ -40,7 +40,7 @@ class EjerciciosAdapter(var ejercicios: MutableList<Exercise>,
     }
 
     override fun getItemCount(): Int {
-        Log.d("debug","ejercicios.size: " + ejercicios.size)
+        //Log.d("debug","ejercicios.size: " + ejercicios.size)
         return ejercicios.size
     }
 

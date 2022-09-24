@@ -42,6 +42,8 @@ class Listado : AppCompatActivity() {
             VolverAlHome()
         }
 
+        //todo cargar datos de cache en listas.
+
         rvEjercios = findViewById<RecyclerView>(R.id.rvEjercicios)
         rvEjercios.layoutManager = LinearLayoutManager(this)
         adapter = EjerciciosAdapter(ejercicios,categorias,musculos,this)
