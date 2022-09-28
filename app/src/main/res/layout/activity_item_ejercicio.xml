@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content">
-<!--    android:minHeight="75dp"-->
+<!--    android:minHeight="75dp"
 
 
     <TextView
@@ -17,19 +17,31 @@
         app:layout_constraintHorizontal_bias="0.09"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+-->
+    <TextView
+        android:id="@+id/lblName"
+        android:layout_width="190dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="10dp"
+        android:text="Nombre Ejercicio"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.096"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 
     <TextView
         android:id="@+id/lblMuscle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="6dp"
+        android:layout_marginBottom="15dp"
         android:text="Musculo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.254"
+        app:layout_constraintHorizontal_bias="0.145"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lblName" />
+        app:layout_constraintTop_toBottomOf="@+id/lblName"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Switch
         android:id="@+id/switch_Favoritos"
