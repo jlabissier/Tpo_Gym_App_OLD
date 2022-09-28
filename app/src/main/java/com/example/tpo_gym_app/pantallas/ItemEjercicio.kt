@@ -2,6 +2,7 @@ package com.example.tpo_gym_app.pantallas
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Switch
 import android.widget.TextView

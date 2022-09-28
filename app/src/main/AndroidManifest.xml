@@ -16,8 +16,12 @@
         android:theme="@style/Theme.Tpo_Gym_App"
         tools:targetApi="31">
         <activity
-            android:name=".pantallas.ItemEjercicio"
+            android:name=".pantallas.DescripcionEjercicio"
             android:exported="false" />
+        <activity
+            android:name=".pantallas.ItemEjercicio"
+            android:exported="false"
+            tools:ignore="Instantiatable" />
         <activity
             android:name=".pantallas.Listado"
             android:exported="false" />

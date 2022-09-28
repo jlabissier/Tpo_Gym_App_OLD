@@ -48,6 +48,16 @@ class Listado : AppCompatActivity() {
         rvEjercios.layoutManager = LinearLayoutManager(this)
         adapter = EjerciciosAdapter(ejercicios,categorias,musculos,this)
         rvEjercios.adapter = adapter
+
+
+        adapter.onItemClick = { exercise: Exercise, muscle: Muscle ->
+            val intent = Intent(this, DescripcionEjercicio::class.java)
+            intent.putExtra("NombreEjercicio", exercise.name)
+            intent.putExtra("NombreMusculo", muscle.name)
+            intent.putExtra("Descripcion", exercise.description)
+            startActivity(intent)
+        }
+
     }
 
 
