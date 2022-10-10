@@ -10,6 +10,7 @@ import com.example.tpo_gym_app.dataService.RepositorioMain
 import com.example.tpo_gym_app.objetos.Category
 import com.example.tpo_gym_app.objetos.Exercise
 import com.example.tpo_gym_app.objetos.Muscle
+import com.google.firebase.auth.FirebaseAuth
 import kotlinx.coroutines.*
 import kotlin.coroutines.CoroutineContext
 
@@ -19,6 +20,9 @@ class Home : AppCompatActivity() {
     private var ejercicios = ArrayList<Exercise>()
     private var musculos = ArrayList<Muscle>()
     private var categorias = ArrayList<Category>()
+
+    private lateinit var fireBaseAuth: FirebaseAuth
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -34,6 +38,24 @@ class Home : AppCompatActivity() {
         btnFavoritos.setOnClickListener{
             cambioPantallaEjerciciosFavoritos()
         }
+
+        fireBaseAuth = FirebaseAuth.getInstance()
+
+        checkUser()
+        val btnLogout = findViewById<Button>(R.id.btnLogOut)
+        btnLogout.setOnClickListener {
+            fireBaseAuth.signOut()
+            checkUser()
+        }
+
+    }
+
+    private fun checkUser() {
+        val firebaseUser = fireBaseAuth.currentUser
+        if(firebaseUser == null){
+            startActivity(Intent(this,Login::class.java))
+        }
+
     }
 
     override fun onStart() {

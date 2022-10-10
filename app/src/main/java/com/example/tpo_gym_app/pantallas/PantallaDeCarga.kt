@@ -6,35 +6,59 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import com.example.tpo_gym_app.R
+import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.auth.api.signin.GoogleSignInClient
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
+
+import com.google.firebase.auth.FirebaseAuth
+
 
 class PantallaDeCarga : AppCompatActivity() {
+    private lateinit var googleSignInClient: GoogleSignInClient
+    private lateinit var fireBaseAuth: FirebaseAuth
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_pantalla_de_carga)
+
+        //fireBaseAuth = FirebaseAuth.getInstance()
+
+        //checkUser()
     }
 
 
     override fun onStart() {
         super.onStart()
 
-        var usuarioLogeado = true
-        // validar si el usuario esta logeado
-        // await de traerme todos los ejercicios.
-        // se los mando a home.
+        Handler(Looper.getMainLooper()).postDelayed({
+            //checkUser()
+            val intent = Intent(this, Login::class.java)
+            startActivity(intent)
+            finish()
+        },1000)
+    }
 
-        if (usuarioLogeado){
-            //pantalla carga
-            //busco lista favoritos.
-            //pantalla home.
-            Handler(Looper.getMainLooper()).postDelayed({
-                val intent = Intent(this, Home::class.java)
-                startActivity(intent)
-                finish()
-            },1000)
+    fun checkUser() {
+        val firebaseUser = fireBaseAuth.currentUser
+        if (firebaseUser != null) {
+            startActivity(Intent(this@PantallaDeCarga, Home::class.java))
+            finish()
         }
         else{
-            //pantalla login.
+            startActivity(Intent(this@PantallaDeCarga, Login::class.java))
+            finish()
         }
-
     }
+
+
+
+
+
+
+
 }
+
+
+
+
