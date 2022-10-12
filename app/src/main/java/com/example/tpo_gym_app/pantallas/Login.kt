@@ -22,7 +22,7 @@ class Login : AppCompatActivity() {
     private lateinit var fireBaseAuth: FirebaseAuth
     private lateinit var btnLogin: SignInButton
 
-    private val defaultClientId = "508539948395-6dvhhhncj32vbd9nn3t3kks2muhes2m4.apps.googleusercontent.com"
+    //private val defaultClientId = "508539948395-dhgip7ggd2r7l24hq532kil1rppit9rq.apps.googleusercontent.com"
 
     private companion object {
         private const val RC_SIGN_IN = 100
@@ -34,7 +34,7 @@ class Login : AppCompatActivity() {
 
 
         var gsioption = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-            .requestIdToken(defaultClientId)
+            .requestIdToken(getString(R.string.default_web_client_id))
             .requestEmail()
             .build()
 
