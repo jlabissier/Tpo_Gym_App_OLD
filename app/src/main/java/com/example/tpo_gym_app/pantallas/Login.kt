@@ -34,7 +34,7 @@ class Login : AppCompatActivity() {
 
 
         var gsioption = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-            .requestIdToken(defaultClientId)
+            .requestIdToken(getString(R.string.default_web_client_id))
             .requestEmail()
             .build()
 
