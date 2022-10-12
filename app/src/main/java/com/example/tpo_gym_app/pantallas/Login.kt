@@ -55,6 +55,7 @@ class Login : AppCompatActivity() {
     fun checkUser() {
         val firebaseUser = fireBaseAuth.currentUser
         if (firebaseUser != null) {
+            Log.d("debug","Por raro que parezca. se logueo")
             startActivity(Intent(this@Login, Home::class.java))
             finish()
         }
